@@ -24,7 +24,7 @@ class Signal<Wrapped> {
     return self
   }
 
-  private let executionQueue: Queue
+  let executionQueue: Queue
   private var observers: [ObserverCallback] = []
   private var values: [Wrapped] = []
   private var isCheckingValues = false
