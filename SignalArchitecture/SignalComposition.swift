@@ -22,4 +22,15 @@ extension Signal {
     }
     return newEmitter.signal
   }
+
+  func filter(predicate: Wrapped -> Bool) -> Signal<Wrapped> {
+    let newEmitter = Emitter<Wrapped>(executionQueue: executionQueue)
+    observe { value in
+      if predicate(value) {
+        newEmitter.emit(value)
+      }
+      return .Continue
+    }
+    return newEmitter.signal
+  }
 }

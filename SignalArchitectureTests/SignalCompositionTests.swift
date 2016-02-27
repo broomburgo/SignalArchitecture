@@ -296,7 +296,6 @@ class SignalCompositionTests: XCTestCase {
   }
 
   func testFlatMapMultipleStop() {
-
     let oldEmitter = Emitter<Int>(executionQueue: Queue.main)
     let newEmitter = Emitter<Int>(executionQueue: Queue.main)
 
@@ -334,6 +333,78 @@ class SignalCompositionTests: XCTestCase {
     }
 
     oldEmitter.emit(expectedValue1)
+
+    let waitForSomeTime = expectationWithDescription("waitForSomeTime")
+    Queue.main.after(0.5) {
+      waitForSomeTime.fulfill()
+    }
+
+    waitForExpectationsWithTimeout(1, handler: nil)
+  }
+
+  func testFilterAllPassing() {
+    let intEmitter = Emitter<Int>(executionQueue: Queue.main)
+
+    let expectedValues = [1, 2, 3, 4]
+
+    var observationCount = 0
+    intEmitter.signal
+      .filter { _ in true }
+      .observe { value in
+        XCTAssertTrue(expectedValues.contains(value))
+        observationCount += 1
+        return .Continue
+    }
+
+    expectedValues.forEach(intEmitter.emit)
+
+    let waitForSomeTime = expectationWithDescription("waitForSomeTime")
+    Queue.main.after(0.5) {
+      XCTAssertEqual(observationCount, expectedValues.count)
+      waitForSomeTime.fulfill()
+    }
+
+    waitForExpectationsWithTimeout(1, handler: nil)
+  }
+
+  func testFilterEvenPassing() {
+    let intEmitter = Emitter<Int>(executionQueue: Queue.main)
+
+    let allValues = [1, 2, 3, 4]
+    let expectedValues = [2, 4]
+
+    var observationCount = 0
+    intEmitter.signal
+      .filter { $0%2 == 0 }
+      .observe { value in
+        XCTAssertTrue(expectedValues.contains(value))
+        observationCount += 1
+        return .Continue
+    }
+
+    allValues.forEach(intEmitter.emit)
+
+    let waitForSomeTime = expectationWithDescription("waitForSomeTime")
+    Queue.main.after(0.5) {
+      XCTAssertEqual(observationCount, expectedValues.count)
+      waitForSomeTime.fulfill()
+    }
+
+    waitForExpectationsWithTimeout(1, handler: nil)
+  }
+
+  func testFilterNonePassing() {
+    let intEmitter = Emitter<Int>(executionQueue: Queue.main)
+
+    let allValues = [1, 2, 3, 4]
+    intEmitter.signal
+      .filter { _ in false }
+      .observe { _ in
+        print("WAT")
+        fatalError()
+    }
+
+    allValues.forEach(intEmitter.emit)
 
     let waitForSomeTime = expectationWithDescription("waitForSomeTime")
     Queue.main.after(0.5) {
