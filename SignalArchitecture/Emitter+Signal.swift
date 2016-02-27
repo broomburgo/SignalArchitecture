@@ -38,26 +38,22 @@ class Signal<Wrapped> {
 extension Signal {
   private func addCallbackAsync(callback: ObserverCallback) {
     Queue.main.async { [weak self] in
-      print("adding callback: \(callback)")
       self?.observers.append(callback)
     }
   }
 
   private func addValueAsync(value: Wrapped) {
     Queue.main.async { [weak self] in
-      print("adding value: \(value)")
       self?.values.append(value)
     }
   }
 
   private func checkValues() {
     Queue.main.async { [weak self] in
-      print("is checking values: \(self?.values)")
       guard let this = self, let firstValue = this.values.first
         where this.isCheckingValues == false else { return }
       this.isCheckingValues = true
       this.values.removeFirst()
-      print("will execute callbacks on first value: \(firstValue)")
       this.executeCallbacksAsync(value: firstValue) { [weak self] in
         guard let this = self else { return }
         this.isCheckingValues = false
@@ -71,7 +67,6 @@ extension Signal {
 
       guard let callbacksToExecute = self?.observers
         where callbacksToExecute.count > 0  else { return }
-      print("callback to execute: \(callbacksToExecute)")
       self?.observers.removeAll()
 
       self?.executionQueue.async {
@@ -82,7 +77,6 @@ extension Signal {
 
         Queue.main.async { [weak self] in
 
-          print("will append remaining callbacks: \(remainingCallbacks)")
           self?.observers.appendContentsOf(remainingCallbacks)
           completion()
         }
@@ -96,7 +90,6 @@ extension Signal {
   {
     var newCallbacks: [ObserverCallback] = []
     for callback in callbacks {
-      print("will execute callback \(callback) with value \(value)")
       switch callback(value) {
       case .Stop:
         break
