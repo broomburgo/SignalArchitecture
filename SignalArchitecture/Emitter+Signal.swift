@@ -25,16 +25,16 @@ class Signal<Wrapped> {
   }
 
   private let executionQueue: Queue
-  private init(executionQueue: Queue) {
-    self.executionQueue = executionQueue
-  }
-
   private var observers: [ObserverCallback] = []
   private var values: [Wrapped] = []
   private var isCheckingValues = false
+
+  private init(executionQueue: Queue) {
+    self.executionQueue = executionQueue
+  }
 }
 
-/// private methods
+/// private logic for callback management
 extension Signal {
   private func addCallbackAsync(callback: ObserverCallback) {
     Queue.main.async { [weak self] in

@@ -90,4 +90,79 @@ class Emitter_SignalTests: XCTestCase {
 
     waitForExpectationsWithTimeout(2, handler: nil)
   }
+
+  func testMultipleSignalsAllContinue() {
+    let expectedValue1 = 9
+    let expectedValue2 = 13
+
+    var hasObservedOnce1 = false
+    let willObserve1_1 = expectationWithDescription("willObserve1_1")
+    let willObserve1_2 = expectationWithDescription("willObserve1_2")
+    intEmitter.signal.observe { value in
+      if hasObservedOnce1 {
+        XCTAssertEqual(value, expectedValue2)
+        willObserve1_2.fulfill()
+      }
+      else {
+        hasObservedOnce1 = true
+        XCTAssertEqual(value, expectedValue1)
+        willObserve1_1.fulfill()
+      }
+      return .Continue
+    }
+
+    var hasObservedOnce2 = false
+    let willObserve2_1 = expectationWithDescription("willObserve2_1")
+    let willObserve2_2 = expectationWithDescription("willObserve2_2")
+    intEmitter.signal.observe { value in
+      if hasObservedOnce2 {
+        XCTAssertEqual(value, expectedValue2)
+        willObserve2_2.fulfill()
+      }
+      else {
+        hasObservedOnce2 = true
+        XCTAssertEqual(value, expectedValue1)
+        willObserve2_1.fulfill()
+      }
+      return .Continue
+    }
+
+    intEmitter.emit(expectedValue1)
+    intEmitter.emit(expectedValue2)
+
+    waitForExpectationsWithTimeout(1, handler: nil)
+  }
+
+  func testMultipleSignalsSomeContinueSomeStop() {
+    let expectedValue1 = 9
+    let expectedValue2 = 13
+
+    let willObserve1_1 = expectationWithDescription("willObserve1_1")
+    intEmitter.signal.observe { value in
+      XCTAssertEqual(value, expectedValue1)
+      willObserve1_1.fulfill()
+      return .Stop
+    }
+
+    var hasObservedOnce2 = false
+    let willObserve2_1 = expectationWithDescription("willObserve2_1")
+    let willObserve2_2 = expectationWithDescription("willObserve2_2")
+    intEmitter.signal.observe { value in
+      if hasObservedOnce2 {
+        XCTAssertEqual(value, expectedValue2)
+        willObserve2_2.fulfill()
+      }
+      else {
+        hasObservedOnce2 = true
+        XCTAssertEqual(value, expectedValue1)
+        willObserve2_1.fulfill()
+      }
+      return .Continue
+    }
+
+    intEmitter.emit(expectedValue1)
+    intEmitter.emit(expectedValue2)
+
+    waitForExpectationsWithTimeout(1, handler: nil)
+  }
 }
