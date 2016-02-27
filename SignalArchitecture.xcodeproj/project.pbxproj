@@ -11,6 +11,8 @@
 		38745DAA1C81A5AC00DCA821 /* SignalArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38745D9F1C81A5AC00DCA821 /* SignalArchitecture.framework */; };
 		38745DBA1C81A69300DCA821 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38745DB91C81A69300DCA821 /* Queue.swift */; };
 		38745DBD1C81A6C100DCA821 /* QueueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38745DBC1C81A6C100DCA821 /* QueueTests.swift */; };
+		38745DBF1C81AA3A00DCA821 /* Emitter+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38745DBE1C81AA3A00DCA821 /* Emitter+Signal.swift */; };
+		38745DC11C81AA5000DCA821 /* Emitter+SignalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38745DC01C81AA5000DCA821 /* Emitter+SignalTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +34,8 @@
 		38745DB91C81A69300DCA821 /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		38745DBB1C81A6C000DCA821 /* SignalArchitectureTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SignalArchitectureTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		38745DBC1C81A6C100DCA821 /* QueueTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueTests.swift; sourceTree = "<group>"; };
+		38745DBE1C81AA3A00DCA821 /* Emitter+Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Emitter+Signal.swift"; sourceTree = "<group>"; };
+		38745DC01C81AA5000DCA821 /* Emitter+SignalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Emitter+SignalTests.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,7 @@
 				38745DA21C81A5AC00DCA821 /* SignalArchitecture.h */,
 				38745DA41C81A5AC00DCA821 /* Info.plist */,
 				38745DB91C81A69300DCA821 /* Queue.swift */,
+				38745DBE1C81AA3A00DCA821 /* Emitter+Signal.swift */,
 			);
 			path = SignalArchitecture;
 			sourceTree = "<group>";
@@ -87,6 +92,7 @@
 				38745DB01C81A5AC00DCA821 /* Info.plist */,
 				38745DBC1C81A6C100DCA821 /* QueueTests.swift */,
 				38745DBB1C81A6C000DCA821 /* SignalArchitectureTests-Bridging-Header.h */,
+				38745DC01C81AA5000DCA821 /* Emitter+SignalTests.swift */,
 			);
 			path = SignalArchitectureTests;
 			sourceTree = "<group>";
@@ -199,6 +205,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38745DBF1C81AA3A00DCA821 /* Emitter+Signal.swift in Sources */,
 				38745DBA1C81A69300DCA821 /* Queue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,6 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38745DC11C81AA5000DCA821 /* Emitter+SignalTests.swift in Sources */,
 				38745DBD1C81A6C100DCA821 /* QueueTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

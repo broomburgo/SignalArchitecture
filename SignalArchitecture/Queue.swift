@@ -21,4 +21,9 @@ struct Queue {
   func sync(callback: () -> ()) {
     dispatch_sync(dispatchQueue, callback)
   }
+
+  func after(numberOfSeconds: Double, callback: () -> ()) {
+    let delay = dispatch_time(DISPATCH_TIME_NOW, Int64(numberOfSeconds * Double(NSEC_PER_SEC)))
+    dispatch_after(delay, dispatchQueue, callback)
+  }
 }
