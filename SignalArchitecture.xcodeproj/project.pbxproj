@@ -42,8 +42,8 @@
 		38745DC01C81AA5000DCA821 /* Emitter+SignalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Emitter+SignalTests.swift"; sourceTree = "<group>"; };
 		38745DC21C81E60600DCA821 /* SignalComposition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalComposition.swift; sourceTree = "<group>"; };
 		38745DC41C81E61A00DCA821 /* SignalCompositionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalCompositionTests.swift; sourceTree = "<group>"; };
-		38745DC61C82053800DCA821 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = SOURCE_ROOT; };
-		38745DC71C82053800DCA821 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		38745DC61C82053800DCA821 /* LICENSE.md */ = {isa = PBXFileReference; explicitFileType = net.daringfireball.markdown; fileEncoding = 4; path = LICENSE.md; sourceTree = SOURCE_ROOT; };
+		38745DC71C82053800DCA821 /* README.md */ = {isa = PBXFileReference; explicitFileType = net.daringfireball.markdown; fileEncoding = 4; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

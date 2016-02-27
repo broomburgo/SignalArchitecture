@@ -11,3 +11,5 @@ Now consider a view controller used, for example, to select a photo from a UICol
 This is different from the classic delegation pattern because multiple objects could observe the same signal, and the signal itself is an object that can be stored, passed around and transformed.
 
 The project will contain a small framework to get started with signals, with commented code for educational purposes: then, an architectural pattern is proposed, based on signals, to manage the presentation and lifetime of view controllers.
+
+The project is ongoing and not yet complete, so please stay tuned.
