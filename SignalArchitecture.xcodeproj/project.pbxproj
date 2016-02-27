@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		38745DA31C81A5AC00DCA821 /* SignalArchitecture.h in Headers */ = {isa = PBXBuildFile; fileRef = 38745DA21C81A5AC00DCA821 /* SignalArchitecture.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		38745DAA1C81A5AC00DCA821 /* SignalArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38745D9F1C81A5AC00DCA821 /* SignalArchitecture.framework */; };
 		38745DBA1C81A69300DCA821 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38745DB91C81A69300DCA821 /* Queue.swift */; };
 		38745DBD1C81A6C100DCA821 /* QueueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38745DBC1C81A6C100DCA821 /* QueueTests.swift */; };
@@ -15,8 +14,8 @@
 		38745DC11C81AA5000DCA821 /* Emitter+SignalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38745DC01C81AA5000DCA821 /* Emitter+SignalTests.swift */; };
 		38745DC31C81E60600DCA821 /* SignalComposition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38745DC21C81E60600DCA821 /* SignalComposition.swift */; };
 		38745DC51C81E61A00DCA821 /* SignalCompositionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38745DC41C81E61A00DCA821 /* SignalCompositionTests.swift */; };
-		38745DC81C82053800DCA821 /* LICENSE.md in Sources */ = {isa = PBXBuildFile; fileRef = 38745DC61C82053800DCA821 /* LICENSE.md */; };
-		38745DC91C82053800DCA821 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 38745DC71C82053800DCA821 /* README.md */; };
+		38745DD11C82078000DCA821 /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 38745DC61C82053800DCA821 /* LICENSE.md */; };
+		38745DD21C82078000DCA821 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 38745DC71C82053800DCA821 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,12 +30,10 @@
 
 /* Begin PBXFileReference section */
 		38745D9F1C81A5AC00DCA821 /* SignalArchitecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SignalArchitecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		38745DA21C81A5AC00DCA821 /* SignalArchitecture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignalArchitecture.h; sourceTree = "<group>"; };
 		38745DA41C81A5AC00DCA821 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38745DA91C81A5AC00DCA821 /* SignalArchitectureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SignalArchitectureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		38745DB01C81A5AC00DCA821 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38745DB01C81A5AC00DCA821 /* TestsInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = TestsInfo.plist; path = SignalArchitectureTests/TestsInfo.plist; sourceTree = SOURCE_ROOT; };
 		38745DB91C81A69300DCA821 /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
-		38745DBB1C81A6C000DCA821 /* SignalArchitectureTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SignalArchitectureTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		38745DBC1C81A6C100DCA821 /* QueueTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueTests.swift; sourceTree = "<group>"; };
 		38745DBE1C81AA3A00DCA821 /* Emitter+Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Emitter+Signal.swift"; sourceTree = "<group>"; };
 		38745DC01C81AA5000DCA821 /* Emitter+SignalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Emitter+SignalTests.swift"; sourceTree = "<group>"; };
@@ -69,7 +66,6 @@
 			isa = PBXGroup;
 			children = (
 				38745DA11C81A5AC00DCA821 /* SignalArchitecture */,
-				38745DAD1C81A5AC00DCA821 /* SignalArchitectureTests */,
 				38745DA01C81A5AC00DCA821 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -86,27 +82,43 @@
 		38745DA11C81A5AC00DCA821 /* SignalArchitecture */ = {
 			isa = PBXGroup;
 			children = (
-				38745DC61C82053800DCA821 /* LICENSE.md */,
-				38745DC71C82053800DCA821 /* README.md */,
-				38745DA21C81A5AC00DCA821 /* SignalArchitecture.h */,
-				38745DA41C81A5AC00DCA821 /* Info.plist */,
-				38745DB91C81A69300DCA821 /* Queue.swift */,
-				38745DBE1C81AA3A00DCA821 /* Emitter+Signal.swift */,
-				38745DC21C81E60600DCA821 /* SignalComposition.swift */,
+				38745DCB1C8206C100DCA821 /* Elements */,
+				38745DCA1C8206B600DCA821 /* Resources */,
+				38745DAD1C81A5AC00DCA821 /* Tests */,
 			);
 			path = SignalArchitecture;
 			sourceTree = "<group>";
 		};
-		38745DAD1C81A5AC00DCA821 /* SignalArchitectureTests */ = {
+		38745DAD1C81A5AC00DCA821 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				38745DB01C81A5AC00DCA821 /* Info.plist */,
-				38745DBC1C81A6C100DCA821 /* QueueTests.swift */,
-				38745DBB1C81A6C000DCA821 /* SignalArchitectureTests-Bridging-Header.h */,
 				38745DC01C81AA5000DCA821 /* Emitter+SignalTests.swift */,
+				38745DBC1C81A6C100DCA821 /* QueueTests.swift */,
 				38745DC41C81E61A00DCA821 /* SignalCompositionTests.swift */,
 			);
+			name = Tests;
 			path = SignalArchitectureTests;
+			sourceTree = SOURCE_ROOT;
+		};
+		38745DCA1C8206B600DCA821 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				38745DC61C82053800DCA821 /* LICENSE.md */,
+				38745DC71C82053800DCA821 /* README.md */,
+				38745DA41C81A5AC00DCA821 /* Info.plist */,
+				38745DB01C81A5AC00DCA821 /* TestsInfo.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		38745DCB1C8206C100DCA821 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				38745DBE1C81AA3A00DCA821 /* Emitter+Signal.swift */,
+				38745DB91C81A69300DCA821 /* Queue.swift */,
+				38745DC21C81E60600DCA821 /* SignalComposition.swift */,
+			);
+			name = Elements;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -116,7 +128,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38745DA31C81A5AC00DCA821 /* SignalArchitecture.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +211,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38745DD11C82078000DCA821 /* LICENSE.md in Resources */,
+				38745DD21C82078000DCA821 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,9 +230,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38745DC81C82053800DCA821 /* LICENSE.md in Sources */,
 				38745DC31C81E60600DCA821 /* SignalComposition.swift in Sources */,
-				38745DC91C82053800DCA821 /* README.md in Sources */,
 				38745DBF1C81AA3A00DCA821 /* Emitter+Signal.swift in Sources */,
 				38745DBA1C81A69300DCA821 /* Queue.swift in Sources */,
 			);
@@ -338,7 +349,7 @@
 		38745DB41C81A5AC00DCA821 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_MODULES = NO;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -356,7 +367,7 @@
 		38745DB51C81A5AC00DCA821 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_MODULES = NO;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -374,11 +385,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				INFOPLIST_FILE = SignalArchitectureTests/Info.plist;
+				INFOPLIST_FILE = SignalArchitectureTests/TestsInfo.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = it.facile.SignalArchitectureTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "SignalArchitectureTests/SignalArchitectureTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -387,11 +397,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				INFOPLIST_FILE = SignalArchitectureTests/Info.plist;
+				INFOPLIST_FILE = SignalArchitectureTests/TestsInfo.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = it.facile.SignalArchitectureTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "SignalArchitectureTests/SignalArchitectureTests-Bridging-Header.h";
 			};
 			name = Release;
 		};
