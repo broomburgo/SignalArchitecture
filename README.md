@@ -6,7 +6,7 @@ A *Signal* is a box that will possibly contain a value at multiple points in tim
 
 Thus, we could observe a *buttonTapSignal*, that will trigger a callback each time the very button is tapped
 
-Now consider a view controller used, for example, to select a photo from a UICollectionView, for editing purposes: there could be a *photoSelectedSignal* which *boxed value* is the photo itself.
+Now consider a view controller used, for example, to select a photo from a UICollectionView, for editing purposes: there could be a *photoSelectedSignal* whose *boxed value* is the photo itself.
 
 This is different from the classic delegation pattern because multiple objects could observe the same signal, and the signal itself is an object that can be stored, passed around and transformed.
 
